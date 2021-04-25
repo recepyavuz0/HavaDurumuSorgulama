@@ -71,7 +71,7 @@ body{
 
 .weather-text{
     text-align: center;
-    font-size: 16px;
+    font-size: 10px;
     color: #51c4d3;
     margin-top: 5px;
 }
@@ -92,9 +92,9 @@ body{
 
 #result{
     display: inline;
-    font-size: 25px;
+    font-size: 15px;
     float: right;
-    margin-top: 45px;
+    margin-top: 50px;
     margin-right: 30px;
     color: #51c4d3;
 
