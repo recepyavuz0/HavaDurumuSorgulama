@@ -5,17 +5,14 @@
 
 body{
     background-color: #51c4d3;
-    
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .weather{
     height: 300px;
     width: 600px;
-    
-    margin-left: 35%;
+    margin-left: 32%;
     margin-top: 10%;
-
     -webkit-box-shadow: 3px 11px 35px -14px rgba(0,0,0,0.75);
     -moz-box-shadow: 3px 11px 35px -14px rgba(0,0,0,0.75);
     box-shadow: 3px 11px 35px -14px rgba(0,0,0,0.75);
@@ -47,7 +44,7 @@ body{
 .future{
     width: 600px;
     height: 110px;
-    margin-left: 35%;
+    margin-left: 32%;
     margin-top: 20px;   
 }
 .future-items{
