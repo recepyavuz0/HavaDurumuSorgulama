@@ -10,22 +10,16 @@ const url=`http://api.openweathermap.org/data/2.5/forecast?q=${inputCity},${inpu
 
 axios.get(url)
   .then(function (response) {
-    // handle success
       TodayInfo(response);
       OneDayLater(response);
       TwoDayLater(response);
       ThreeDayLater(response);
       FourDayLater(response);
-
-      console.log(response);
   })
   .catch(function (error) {
-    
     if (error.response) {
-
       let message =error.response.data.message;
       let status=error.response.status;
-      
       console.log(`HATA >>> HTTP Kodu : ${status}  Hata Mesajı : ${message} `);
     }else{
       console.log(`HATA >>> Hata Mesajı : ${error} `);
@@ -55,6 +49,7 @@ function OneDayLater(response){
       let weather=response.data.list[8].weather[0].description;
       let celsius =response.data.list[8].main.temp;
       let requestDate =(String(response.data.list[8].dt_txt)).slice(8,10)+" "+months[(Number((String(response.data.list[8].dt_txt)).slice(5,7)))-1];
+      
       document.getElementById("one-text").innerText=celsius.toFixed(0)+"°C";
       document.getElementById("one-date").innerText=requestDate;
       document.getElementById("one-weather").innerText=Capitalize(weather);
@@ -66,6 +61,7 @@ function TwoDayLater(response){
       let weather=response.data.list[16].weather[0].description;
       let celsius =response.data.list[16].main.temp;
       let requestDate =(String(response.data.list[16].dt_txt)).slice(8,10)+" "+months[(Number((String(response.data.list[16].dt_txt)).slice(5,7)))-1];
+      
       document.getElementById("two-text").innerText=celsius.toFixed(0)+"°C";
       document.getElementById("two-date").innerText=requestDate;
       document.getElementById("two-weather").innerText=Capitalize(weather);
