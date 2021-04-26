@@ -140,6 +140,7 @@ function FourDayLater(response){
 ```
 * Sorguladığımız şehrin 5 günlük hava durumu verilerini çekmek için gerekli fonksiyonları oluşturuyoruz.
 * API ile gelen json verileri değişkenlere çekerek html yapımıza yazdırıyoruz.
+* **document.getElementById().innerText** ile değişkenlerimizi ilgili id değerine sahip html etiketine yazdırıyoruz. 
 ### 7.Adım <br>
 ```
 //Gönderilen hava durumunun kelimelerinin baş harflerini büyük harfe çeviren fonksiyon
@@ -184,18 +185,34 @@ axios.get(url)
 
 ## Javacsript Kodlarının Açıklamaları
 
-* `var inputCountry=prompt("Lütfen ülke veya ülke kodu giriniz.");` <br>
-**prompt** kullanıcıdan veri almak için açılan pencere için kullanılır. 
-**var** ile global bir değişken oluşturuyoruz.
+1. `const url="api_adresi"` <br>
+**const** sabit bir değişken tanımlıyoruz ve istek göndereceğimiz apimizin adresini belirliyoruz.
 
-<br>
+2. `axios.get(url)` <br>
+**axios.get()** ile belirlediğimiz url adresine veri geçmek için get isteğinde bulunuruz. Gelen veri json tipinde gelmektedir.
+
+3. `var inputCountry=prompt("Lütfen ülke veya ülke kodu giriniz.")` <br>
+**prompt** kullanıcıdan veri almak için açılan pencere için kullanılır.**var** ile global bir değişken oluşturuyoruz.
+
+4. `var months=["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"]`<br>
+**[]** işareti ile string bir dizi tanımlıyoruz.
+
+5. `var date=new Date();` <br>
+**new Date()** ile Date tipinde bir nesne oluşturuyoruz.
+
+6. `date.getDate()` <br>
+**getDate()** ile sistem tarihinin kaçıncı günde olduğunun bilgisine çeker.
+
+7. `celsius.toFixed(0)` <br>
+**toFixed()** ile virgülden sonra kaç basamak gösterileceğini belirtir.
+
+8. `(String(response.data.list[0].dt_txt)).slice(5,7)))` <br>
+**(String(değer))** Veri dönüşümü yapmak için kullanılır.
+**slice(baslangic,bitis)** ile string tipindeki verinin içinden belirli alanı ayırıp kullanmaya yarar. Belirtilen baslangic indexten başlayarak bitis indexine kadar seçer.(baslangic indexi dahil, bitis indexi dahil değil)
+
+9. `let weathers=weather.split(" ")` <br>
+**split()** ile metinimizi belirtilen işaretten ayırarak bir diziye aktarır. **let** ile local bir değişken oluştururuz. Tanımlanan parantezler içerisinde kullanılır. 
 
 
-
-
-
-
-
-
-
-
+10. `toUpperCase() , toLowerCase()` <br>
+**toUpperCase() ve toLowerCase()** ile metnin tümünü büyük harfe veya küçük harfe çevirir.
