@@ -27,7 +27,7 @@ Axios kütüphanemizi kullanabilmek için `<script src="https://cdn.jsdelivr.net
 API ile gelen verileri göstermek için html css ile istediğimiz tasarımı oluşturuyoruz.
 ### 3.Adım <br>
 projemize javascript dosyası oluşturuyoruz ve içine <br>
-```
+```javascript
 const url="{api_url/user?ID=11111}";
 
 axios.get(url)
@@ -44,7 +44,7 @@ axios.get(url)
   });
 ```
 şeklinde veya
-```
+```javascript
 const url="{api_url}";
 axios.get('/user', {
     params: {
@@ -65,19 +65,19 @@ axios.get('/user', {
 ```
 kod bloğu ile axios get isteği yollamak için iskeleti oluşturuyoruz. <br>
 ### 4.Adım <br>
-```
+```javascript
 var inputCountry=prompt("Lütfen ülke veya ülke kodu giriniz.");
 var inputCity=prompt("Lütfen şehir giriniz.");
 ```
 * Kullanıcıdan sorgulamak istenilen ülke ve şehir bilgilerini almak için **prompt** kodu ile veri girişi için pencere oluşturup girilen veriyi değişkenlere atıyoruz.
 ### 5.Adım <br>
-```
+```javascript
 var months=["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
 var date=new Date();
 ```
 projede kullancağımız aylar dizisini ve Date tipinde bir global nesne tanımlıyoruz.
 ### 6.Adım <br>
-```
+```javascript
 function TodayInfo(response){
       let city=response.data.city.name;
       let country=response.data.city.country;
@@ -142,7 +142,7 @@ function FourDayLater(response){
 * API ile gelen json verileri değişkenlere çekerek html yapımıza yazdırıyoruz.
 * **document.getElementById().innerText** ile değişkenlerimizi ilgili id değerine sahip html etiketine yazdırıyoruz. 
 ### 7.Adım <br>
-```
+```javascript
 //Gönderilen hava durumunun kelimelerinin baş harflerini büyük harfe çeviren fonksiyon
 function Capitalize(weather){
   let weathers=weather.split(" ");
@@ -158,7 +158,7 @@ function Capitalize(weather){
 * Bu fonksiyonu yazmamızın nedeni API ile gelen veri küçük harflerle geldiği için bu fonksiyon ile büyük harfe çevirip ekrana yazdırıyoruz.
 
 ### 7.Adım <br>
-```
+```javascript
 const url=`http://api.openweathermap.org/data/2.5/forecast?q=${inputCity},${inputCountry}&appid=69f27776fcc2ef53fa6dea89dd4a4aeb&lang=TR&units=metric`;
 
 axios.get(url)
